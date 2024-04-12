@@ -11,19 +11,41 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       devOptions: { enabled: true },
-      includeAssets: ['/icons/ic-48-48.png'],
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
       manifest: {
-        name: 'My dummy PWApp',
-        short_name: 'PWApp',
-        description: 'My dummy PWApp!',
-        theme_color: '#ffffff',
-        icons: [
+        "name": "My dummy PWApp",
+        "short_name": "PWApp",
+        "icons": [
           {
-            src: "/icons/ic-512-512.png",
-            sizes: "512x512",
-            type: "image/png",
+            "src": "/pwa-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+          },
+          {
+            "src": "/pwa-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+          },
+          {
+            "src": "/pwa-maskable-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+          },
+          {
+            "src": "/pwa-maskable-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
           }
         ],
+        "start_url": "/",
+        "display": "standalone",
+        "background_color": "#FFFFFF",
+        "theme_color": "#FFFFFF",
+        "description": "My dummy PWApp!"
       }
     })
   ],

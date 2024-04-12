@@ -14,7 +14,7 @@ onMounted(() => {
   </header>
 
   <main>
-    <h1 class="green">Here we go!</h1>
+    <h1 class="green">Here we go!!!</h1>
     <h3>
       You’ve successfully created a PWA project!
     </h3>
