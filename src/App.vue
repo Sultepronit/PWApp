@@ -6,6 +6,20 @@ onMounted(() => {
   window.moveTo(1600, 0);
   // console.log('Resized(?)');
 });
+
+function openWindow(type) {
+    const strWindowFeatures = 'location=yes,height=1110,width=500,top=0,left=1600,scrollbars=yes,status=yes';
+
+    const URL = type === 'self' ? '/' : `https://translate.google.com/?sl=en&tl=uk&text=apple%0A&op=translate`;
+
+    const re = open(URL, '_blank', strWindowFeatures);
+    // const re = open(URL, '_blank');
+    console.log(re);
+   
+    if(re && type === 'self') {
+        close();
+    }
+}
 </script>
 
 <template>
@@ -18,6 +32,8 @@ onMounted(() => {
     <h3>
       You’ve successfully created a PWA project!
     </h3>
+
+    <p class="tab" @click="openWindow('google')">google 3</p>
   </main>
 </template>
 
